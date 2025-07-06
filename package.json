@@ -1,0 +1,47 @@
+{
+  "name": "wexile-connect",
+  "version": "0.2.0",
+  "description": "VPN Connection App",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "build": {
+    "appId": "com.wexile.connect",
+    "productName": "Wexile Connect",
+    "win": {
+      "icon": "icon.ico",
+      "target": "nsis",
+      "requestedExecutionLevel": "requireAdministrator"
+    },
+    "directories": {
+      "buildResources": "."
+    },
+    "files": [
+      "**/*"
+    ],
+    "extraFiles": [
+      {
+        "from": "resources\\wireguard",
+        "to": "resources\\wireguard",
+        "filter": ["**/*"]
+      },
+      {
+        "from": "resources\\wireguard",
+        "to": "resources\\wireguard",
+        "filter": ["**/*"]
+      }
+    ]
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.0.16"
+  },
+  "devDependencies": {
+    "electron-builder": "^26.0.12",
+    "electron": "^28.1.0"
+  }
+}
